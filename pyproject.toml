@@ -1,0 +1,24 @@
+[project]
+name = "ocr-bg-mcp"
+version = "0.1.0"
+description = "MCP server: OCR for photographed and scanned Bulgarian documents, with per-page confidence and a vision fallback"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "mcp>=2.3",
+    "numpy>=2.5.4",
+    "opencv-python-headless>=5.0.0.93",
+]
+
+[project.scripts]
+ocr-bg-mcp = "ocr_bg_mcp:main"
+
+[build-system]
+requires = ["uv_build>=0.11.8,<0.12.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pillow>=12.3.0",
+    "pytest>=9.1.1",
+]
